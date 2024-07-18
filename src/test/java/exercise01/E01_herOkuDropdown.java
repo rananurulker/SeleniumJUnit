@@ -21,16 +21,22 @@ public class E01_herOkuDropdown extends TestBaseAll {
         WebElement ddm=driver.findElement(By.id("dropdown"));
         Select select=new Select(ddm);
         select.selectByIndex(1);
+        System.out.println(select.getFirstSelectedOption().getText());
+
         //2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
         Select select1=new Select(ddm);
         select1.selectByValue("2");
+        System.out.println(select1.getFirstSelectedOption().getText());
+
         //3.Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
         Select select2=new Select(ddm);
         select2.selectByVisibleText("Option 1");
+        System.out.println(select2.getFirstSelectedOption().getText());
+
         //4.Tüm dropdown değerleri(value) yazdırın
         System.out.println(select.getFirstSelectedOption().getText());
         System.out.println(select1.getFirstSelectedOption().getText());
-        System.out.println(select2.getFirstSelectedOption().getText());
+
 
         //5. Dropdown’un boyutunun 4 olduğunu test edin
         List<WebElement> size=select.getOptions();
