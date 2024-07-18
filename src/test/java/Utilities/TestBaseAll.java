@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class TestBaseAll {
-    static WebDriver driver;
+    protected static WebDriver driver;
 
     @BeforeAll
     public static void setup(){
