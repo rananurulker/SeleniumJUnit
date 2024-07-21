@@ -2,6 +2,7 @@ package Utilities;
 
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReusableMethods {
@@ -12,8 +13,21 @@ public class ReusableMethods {
             throw new RuntimeException(e);
         }
     }
+    public static List<String> getStringList(List<WebElement> kaynakList){
 
-    public static boolean getStringList(List<WebElement> ayDdmTumSecenekler) {
-        return false;
+        List<String> stringList = new ArrayList<>();
+
+        for ( WebElement eachElement : kaynakList
+        ) {
+
+            stringList.add(eachElement.getText());
+
+        }
+
+
+        return stringList;
     }
-}
+
+
+    }
+
