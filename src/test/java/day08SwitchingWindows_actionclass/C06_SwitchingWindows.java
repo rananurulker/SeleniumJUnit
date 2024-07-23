@@ -1,13 +1,11 @@
-package day_08SwitchingWindows_actionclass;
+package day08SwitchingWindows_actionclass;
 
 import Utilities.ReusableMethods;
 import Utilities.TestBaseAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class C06_SwitchingWindows extends TestBaseAll {
     @Test

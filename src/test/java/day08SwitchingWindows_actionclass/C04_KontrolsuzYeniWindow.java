@@ -1,4 +1,4 @@
-package day_08SwitchingWindows_actionclass;
+package day08SwitchingWindows_actionclass;
 
 import Utilities.ReusableMethods;
 import Utilities.TestBaseEach;
