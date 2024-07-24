@@ -15,6 +15,7 @@ public class E06_220lvELementtesti extends TestBaseAll {
         //Rekomendējam yazisini test et
 
         driver.get("https://220.lv/lv/lapaspuse/marketplace-piedavajumi");
+        String lvWHD=driver.getWindowHandle();
         WebElement rekomendejamElementi= driver.findElement(By.xpath("(//*[@class='filter-tooltip'])[1]"));
 
         String expectedElement="Rekomendējam";
@@ -22,6 +23,17 @@ public class E06_220lvELementtesti extends TestBaseAll {
 
         Assertions.assertEquals(expectedElement,actualElement);
 
+
+        ReusableMethods.bekle(3);
+
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.wisequarter.com");
+        String wiseWHD=driver.getWindowHandle();
+
+        System.out.println(lvWHD);
+        System.out.println(wiseWHD);
+
+        driver.switchTo().window(lvWHD);
 
         ReusableMethods.bekle(3);
     }
