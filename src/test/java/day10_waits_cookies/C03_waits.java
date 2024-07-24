@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class C03_waits {
-    /
+
     WebDriver driver;
 
     @Test
@@ -74,8 +74,18 @@ public class C03_waits {
 
         //5. It’s back mesajinin gorundugunu test edin
             //1. adim wait objesi olustur kismini pass geciyoruz cunku yukarida olusturulustur
-            //2. mumkunse kullanacagimiz elementi locate edelim
 
+            //2. mumkunse kullanacagimiz elementi locate edelim
+            //  kullanacagimiz element daha onceden its gone olan element ile ayni
+            //ama html element degistigi icin ayni element olarak dusunemeyiz
+            //bizim kullanmak istedigimiz It's back elementini locate etmemiz mumkun olmadigindan
+            //ikinci ve ucuncu adimi birlestirelim
+        // xpath //*[text()="It's back!"]
+
+            //3. adim bekleme locatei beraber yapalim
+        WebElement itsBackElementi=
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()=\"It's back!\"]")));
+            Assertions.assertTrue(itsBackElementi.isDisplayed());
 
     }
 }
