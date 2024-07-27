@@ -60,6 +60,7 @@ public class C06_SwitchingWindows extends TestBaseAll {
 
         Assertions.assertTrue(fashionYaziElementi.isDisplayed());
 
+
         //6- Sayfayi kapatin
     }
 }
