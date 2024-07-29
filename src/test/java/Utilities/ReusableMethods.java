@@ -127,4 +127,28 @@ public class ReusableMethods {
         }
 
     }
+    public static void getWebelementScreenshot(WebElement istenenWebElement, String reimIsmi){
+        //tarih etiketi olusturalim
+
+        LocalDateTime zaman=LocalDateTime.now();//2024.08.29T12:42:23
+        DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("yyMMddHHmmss");
+        String tarihEtiketi= zaman.format(dateTimeFormatter);//240829114023
+
+
+        //1.adim webelementi locate et
+
+        //2.adim kaydedeceginiz doyayi olusturun
+        File webElementSS=new File("target/ekrangoruntuleri/"+reimIsmi+"_"+tarihEtiketi+".png");
+
+        //3.adim webelementi kullanarak ss  alip gecici dosya olarak kaydedin
+        File geciciDosya=istenenWebElement.getScreenshotAs(OutputType.FILE);
+
+        //4.adim gecici dosyayi asil dosyaya kopyalayalim
+        try {
+            FileUtils.copyFile(geciciDosya,webElementSS);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     }
