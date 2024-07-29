@@ -5,9 +5,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 
 public class C02_WriteExcel {
     @Test
@@ -36,7 +34,11 @@ public class C02_WriteExcel {
         sayfa1.getRow(14).createCell(4).setCellValue(54000);
 
         //9) Dosyayi kaydedelim
-
+        FileOutputStream fos=new FileOutputStream(dosyaYolu);
+        workbook.write(fos);
         //10)Dosyayi kapatalim
+        fis.close();
+        fos.close();
+        workbook.close();
     }
 }
